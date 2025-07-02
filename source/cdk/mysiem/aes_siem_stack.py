@@ -1085,10 +1085,9 @@ class MyAesSiemStack(cdk.Stack):
                 self, 'AesSiemVpcSecurityGroup',
                 security_group_name='aes-siem-vpc-sg',
                 vpc=vpc_aes_siem)
-            for vpc_cidr_block in vpc_cidr_blocks:
-                sg_vpc_aes_siem.add_ingress_rule(
-                    peer=aws_ec2.Peer.ipv4(vpc_cidr_block),
-                    connection=aws_ec2.Port.tcp(443),)
+            sg_vpc_aes_siem.add_ingress_rule(
+                peer=aws_ec2.Peer.ipv4('10.0.0.0/8'),
+                connection=aws_ec2.Port.tcp(443),)
             sg_vpc_opt = sg_vpc_aes_siem.node.default_child.cfn_options
             sg_vpc_opt.deletion_policy = cdk.CfnDeletionPolicy.RETAIN
         else:
