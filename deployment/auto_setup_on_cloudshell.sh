@@ -2,9 +2,9 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
 
-# bash <(curl -s -o- https://raw.githubusercontent.com/aws-samples/siem-on-amazon-opensearch-service/main/deployment/auto_setup_on_cloudshell.sh)
+# bash <(curl -s -o- https://raw.githubusercontent.com/devvick/siem-on-amazon-opensearch-service/dv/deployment/auto_setup_on_cloudshell.sh)
 # or add git commit id at the end of line
-# bash <(curl -s -o- https://raw.githubusercontent.com/aws-samples/siem-on-amazon-opensearch-service/main/deployment/auto_setup_on_cloudshell.sh) develop
+# bash <(curl -s -o- https://raw.githubusercontent.com/devvick/siem-on-amazon-opensearch-service/dv/deployment/auto_setup_on_cloudshell.sh) dv
 
 ###############################################################################
 # helper Function
@@ -346,7 +346,7 @@ if [ -d "$BASEDIR" ]; then
   cd "$HOME" || exit
 else
   echo "git clone siem source code"
-  git clone https://github.com/aws-samples/siem-on-amazon-opensearch-service.git > /dev/null
+  git clone https://github.com/devvick/siem-on-amazon-opensearch-service.git > /dev/null
   cd "$BASEDIR" || exit
   git checkout "$commitid"
   cd "$HOME" || exit
@@ -430,7 +430,7 @@ echo "1. Go to Systems Manager / Parameter Store in selected region"
 echo "   https://console.aws.amazon.com/systems-manager/parameters/siem/cdk/cdk.json/"
 echo "2. Check and Edit cdk.json file in Parameter Store"
 echo "   If you want to update SIEM without changes, please just return "
-echo "   see more details https://github.com/aws-samples/siem-on-amazon-opensearch-service/blob/main/docs/deployment.md"
+echo "   see more details https://github.com/devvick/siem-on-amazon-opensearch-service/blob/main/docs/deployment.md"
 echo ""
 echo ""
 echo ""
