@@ -382,7 +382,7 @@ class MyAesSiemStack(cdk.Stack):
             description=('Create new SQS VPC Endpoint with SIEM solution. '
                          'If you use existing VPC and already have SQS VPC '
                          'Endpoint, select false'),
-            default='true')
+            default='false')
 
         create_ssm_vpce = cdk.CfnParameter(
             self, 'CreateSsmVpcEndpoint', allowed_values=['true', 'false'],
@@ -403,7 +403,7 @@ class MyAesSiemStack(cdk.Stack):
             description=('Create new S3 VPC Endpoint with SIEM solution. '
                          'If you use existing VPC and already have S3 VPC '
                          'Endpoint, select false'),
-            default='true')
+            default='false')
 
         ct_log_buckets = cdk.CfnParameter(
             self, 'ControlTowerLogBucketNameList',
